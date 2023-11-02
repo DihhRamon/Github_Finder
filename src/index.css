@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: url(../public/bg4.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100vw;
+}
+
+p {
+  text-align: center;
+  color: #fffc89
+}
+
+a {
+  text-decoration: none;
+  color: #fff
+}
+
+h3 {
+  color: #fecb00;
+}

@@ -1,0 +1,32 @@
+.research {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+      
+.research_container {
+    display: flex;
+    gap: 0.5rem;
+}
+      
+.research_container input,
+.research_container button {
+    padding: 0.6rem;
+    border-radius: 3px;
+    border: none;
+    color: #2b3566;
+}
+      
+.research_container button {
+      background-color: #0e1129;
+      cursor: pointer;
+}
