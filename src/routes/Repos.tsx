@@ -13,11 +13,8 @@ const Repos = () => {
   const { username } = useParams();
 
   const [repos, setRepos] = useState<RepoProps[] | [] | null>(null);
-  const [search, setSearch] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
-
-  
 
   useEffect(() => {
     const loadrepos = async function (username: string) {
@@ -41,57 +38,17 @@ const Repos = () => {
     if (username) {
       loadrepos(username);
     }
-  }, [username]);
-
- 
-  const filteredRepos = search.length > 0
-  ? repos?.filter((repo) => repo.name.toLowerCase().includes(search)) : [];
+  }, []);
 
   if (!repos && isLoading) return <Loader />;
 
   return (
     <div className={classes.repos}>
       <BackBtn />
-      <h2>Explore os repositórios do usuário: {username}</h2> 
-      
+      <h2>Explore os repositórios do usuário: {username}</h2>
       {repos && repos.length === 0 && <p>Não há repositórios.</p>}
       {repos && repos.length > 0 && (
         <div className={classes.repos_container}>
-          <h3>Pesquisar:</h3>
-        <div>
-          <input
-          className="search-input" 
-          type="text"
-          placeholder="Digite para pesquisar..."
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-          />
-
-      {search.length > 0 ? (
-        <ul>
-          {filteredRepos?.map(repo => {
-            return (
-            <li key={repo.name}> 
-             {repo.name}
-            </li>
-          )
-        })}
-      </ul>
-      ) : (
-        <ul>
-          {repos?.map(repo => {
-            return (
-              <li key={repo.name}>
-                {repo.name}
-              </li>
-              );
-          })}
-        </ul>
-      )
-        }
-
-
-      </div>
           {repos.map((repo: RepoProps) => (
             <Repo key={repo.name} {...repo} />
           ))}
