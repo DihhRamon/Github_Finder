@@ -13,8 +13,12 @@ const Repos = () => {
   const { username } = useParams();
 
   const [repos, setRepos] = useState<RepoProps[] | [] | null>(null);
+  const [reposData, setReposData] = useState<RepoProps[]>([]);
+  
 
   const [isLoading, setIsLoading] = useState(false);
+
+  
 
   useEffect(() => {
     const loadrepos = async function (username: string) {
@@ -33,26 +37,53 @@ const Repos = () => {
       orderedRepos = orderedRepos.slice(0, 5);
 
       setRepos(orderedRepos);
+      setReposData(orderedRepos);
     };
 
     if (username) {
       loadrepos(username);
     }
-  }, []);
+  }, [username]);
+
+ 
+  const handleSearch = (searchValue: string) => {
+    const reposCopy = [...reposData];
+    const filteredRepos: RepoProps[] = reposCopy.filter(
+      (product: RepoProps) => {
+        return product.name
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trimEnd());
+      }
+    );
+    setRepos(filteredRepos)
+  };
 
   if (!repos && isLoading) return <Loader />;
 
   return (
     <div className={classes.repos}>
       <BackBtn />
-      <h2>Explore os repositórios do usuário: {username}</h2>
-      {repos && repos.length === 0 && <p>Não há repositórios.</p>}
-      {repos && repos.length > 0 && (
+      <h2>Explore os repositórios do usuário: {username}</h2> 
+      
+      
+      <div className={classes.repos_search}>
+      <h3>Pesquisar Projeto:</h3>
+          <input
+          className="search-input" 
+          type="text"
+          placeholder="Pesquisar projeto..."
+          onChange={(e) => {handleSearch(e.target.value)}}
+          />
+      </div>
+
+      {repos?.length ? (
         <div className={classes.repos_container}>
           {repos.map((repo: RepoProps) => (
             <Repo key={repo.name} {...repo} />
           ))}
         </div>
+      ) : (
+        <p>Não há repositórios.</p>
       )}
     </div>
   );
