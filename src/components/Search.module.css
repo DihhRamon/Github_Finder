@@ -12,9 +12,13 @@ flex-direction: column;
 gap: 1rem;
 margin-bottom: 1.5rem;
 }
-  
+
+.search h2 {
+  color: #eb455f; 
+}
+
 .search p {
-  color: #fffc89;
+  color: #fcffe7;
 }
   
 .search_container {
@@ -27,11 +31,11 @@ margin-bottom: 1.5rem;
   padding: 0.6rem;
   border-radius: 3px;
   border: none;
-  color: #1d201e;
+  color: #2b3467;
 }
   
 .search_container button {
-  background-color: #1d201e;
+  background-color: #2b3467;
   cursor: pointer;
-  color: #fffc89;
+  color: #bad7e9;
 }

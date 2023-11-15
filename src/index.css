@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -22,14 +22,14 @@ body, html {
 
 p {
   text-align: center;
-  color: #fffc89
+  color: #2b3467;
 }
 
 a {
   text-decoration: none;
-  color: #fff
+  color: #f2f2f2;
 }
 
 h3 {
-  color: #fecb00;
+  color: #eb455f;
 }

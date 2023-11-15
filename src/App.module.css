@@ -1,11 +1,24 @@
+@font-face {
+  font-family: "Nirequa";
+  src: url('../src/fonts/Nirequa.otf') format('opentype');
+}
+
 .app {
   max-width: 500px;
   margin: 0 auto;
+  text-align: center;
 }
   
 .app h1 {
   text-align: center;
   margin-bottom: 1rem;
-  margin-top: 1rem;
-  color: #fecb00;
+  color: #e31316;
+  font-family: 'Nirequa';
+  font-size: 3rem;
+}
+
+.app_img img{
+  max-width: 300px;
+  text-align: center;
+  
 }
