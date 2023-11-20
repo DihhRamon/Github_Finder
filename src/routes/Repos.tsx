@@ -3,7 +3,7 @@ import { UserProps } from "../types/user";
 
 import Repo from "../components/Repo";
 import BackBtn from "../components/BackBtn";
-import Profile from "../components/Profile";
+
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -82,6 +82,7 @@ const Repos = () => {
     public_repos,
 }: UserProps) => {
   return (
+   <div className={classes.container}>
     <div className={classes.profile}>
         <div className={classes.profile_avatar}>  
           <img src={avatar_url} alt={login} />
@@ -114,13 +115,9 @@ const Repos = () => {
           <FaCodeBranch />
           <span>{public_repos}</span>
         </div>    
-        
     </div>
-  );
-};
 
-    return (
-    <div className={classes.repos}>
+	<div className={classes.repos}>
       <BackBtn />
       <h2>Explore os repositórios do usuário: {username}</h2> 
       {user && <Profile {...user}/>}
@@ -133,18 +130,21 @@ const Repos = () => {
           onChange={(e) => {handleSearch(e.target.value)}}
           />
       </div>
-
-      {repos?.length ? (
+	  
+	  {repos?.length ? (
         <div className={classes.repos_container}>
           {repos.map((repo: RepoProps) => (
             <Repo key={repo.name} {...repo} />
           ))}
         </div>
-      ) : (
+      ) : 
+      (
         <p>Não há repositórios.</p>
       )}
     </div>
-  );
+   </div>
+ );
+};
 };
 
 export default Repos;
