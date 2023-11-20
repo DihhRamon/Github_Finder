@@ -6,7 +6,7 @@ function App() {
   return (
       <div className={classes.app}>
         <div className={classes.app_img}>
-          <img src="./public/github.png" alt="Mascote Git" />
+          <img src="/github.png" alt="Mascote Git" />
         </div>
         <h1>GitHub Finder</h1>
         <Outlet />

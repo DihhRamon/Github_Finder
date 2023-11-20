@@ -1,4 +1,4 @@
-.profile {
+.profile, .repos {
   max-width: 850px;
   display: none;
   grid-template-columns: minmax(100px, 170px) minmax(200px, auto)  minmax(70px, 150px);

@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url(../public/bg6.jpg);
+  background: url(/bg6.jpg);
   background-size: cover;
   background-position: center;
   padding: 2rem;
