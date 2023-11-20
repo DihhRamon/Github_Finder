@@ -1,3 +1,16 @@
+.profile {
+  max-width: 850px;
+  display: none;
+  grid-template-columns: minmax(100px, 170px) minmax(200px, auto)  minmax(70px, 150px);
+  justify-content: center;
+  align-items: center;
+  margin-top: larger;
+  animation: down 1s ease forwards;
+  gap: 30px;
+  flex-direction: column;
+  margin-top: medium;
+}
+
 .repos h2 {
   font-size: 1.2rem;
   text-align: center;
