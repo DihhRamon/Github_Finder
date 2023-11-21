@@ -130,8 +130,7 @@ const Repos = () => {
           onChange={(e) => {handleSearch(e.target.value)}}
           />
       </div>
-	  
-	  {repos?.length ? (
+	  	  {repos?.length ? (
         <div className={classes.repos_container}>
           {repos.map((repo: RepoProps) => (
             <Repo key={repo.name} {...repo} />
